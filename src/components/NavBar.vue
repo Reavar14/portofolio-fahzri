@@ -42,8 +42,9 @@
 
           <a
             href="/CV-Faizul-Ahmad.pdf"
-            download="CV_Faizul_Ahmad.pdf"
-            class="btn-primary text-sm px-4 py-2"
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="btn-primary text-sm px-4 py-2 flex items-center gap-2"
           >
             <span class="flex items-center gap-2">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
