@@ -41,7 +41,7 @@
           </a>
 
           <a
-            href="/public/CV-Faizul-Ahmad.pdf"
+            href="/CV-Faizul-Ahmad.pdf"
             download="CV_Faizul_Ahmad.pdf"
             class="btn-primary text-sm px-4 py-2"
           >
