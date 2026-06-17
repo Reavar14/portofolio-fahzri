@@ -42,7 +42,7 @@
 
           <a
             href="/public/CV-Faizul-Ahmad.pdf"
-            download
+            download="CV_Faizul_Ahmad.pdf"
             class="btn-primary text-sm px-4 py-2"
           >
             <span class="flex items-center gap-2">
