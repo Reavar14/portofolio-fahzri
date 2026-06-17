@@ -41,7 +41,7 @@
           </a>
 
           <a
-            href="/cv-fahzri-ahmad.pdf"
+            href="/public/CV-Faizul-Ahmad.pdf"
             download
             class="btn-primary text-sm px-4 py-2"
           >
@@ -94,7 +94,7 @@
             {{ item.label }}
           </a>
           <a
-            href="/cv-fahzri-ahmad.pdf"
+            href="/CV-Faizul-Ahmad.pdf"
             download
             class="btn-primary text-center mt-2"
             @click="menuOpen = false"

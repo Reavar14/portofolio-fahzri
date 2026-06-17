@@ -118,7 +118,7 @@
       <!-- GitHub CTA -->
       <div class="text-center mt-12 animate-on-scroll">
         <a
-          href="https://github.com/fahzriahmad"
+          href="https://github.com/Reavar14"
           target="_blank"
           rel="noopener noreferrer"
           class="btn-outline inline-flex items-center gap-2"
