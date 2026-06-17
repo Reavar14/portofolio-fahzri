@@ -15,7 +15,7 @@
             F
           </div>
           <span class="font-bold text-white text-lg tracking-tight">
-            Fahzri<span class="text-primary-400">.</span>
+            Faizul Ahmad Fahzri<span class="text-primary-400">.</span>
           </span>
         </a>
 

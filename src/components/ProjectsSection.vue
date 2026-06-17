@@ -29,17 +29,32 @@
               class="relative h-48 flex items-center justify-center overflow-hidden"
               :style="`background: ${project.gradient}`"
             >
-              <!-- Pattern overlay -->
-              <div class="absolute inset-0 bg-grid opacity-20" />
-              <!-- Icon -->
-              <div class="relative z-10 flex flex-col items-center gap-3">
+              <!-- 1. JIKA PROJECT.ICON ADALAH GAMBAR (Gambar Full Memenuhi Container) -->
+              <img 
+                v-if="project.icon.includes('.')" 
+                :src="project.icon" 
+                :alt="project.title" 
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+
+              <!-- Pattern overlay (Hanya muncul jika bukan gambar full agar tidak menutupi screenshot) -->
+              <div v-else class="absolute inset-0 bg-grid opacity-20" />
+              
+              <!-- 2. JIKA PROJECT.ICON ADALAH EMOJI BIASA (Tampilan Kotak Kecil bawaan template) -->
+              <div v-if="!project.icon.includes('.')" class="relative z-10 flex flex-col items-center gap-3">
                 <div class="w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-4xl shadow-xl">
                   {{ project.icon }}
                 </div>
                 <span class="text-white/60 text-xs font-mono tracking-wider">{{ project.type }}</span>
               </div>
-              <!-- Featured badge -->
-              <div v-if="project.featured" class="absolute top-3 right-3 px-2 py-1 rounded-full bg-primary-500/30 border border-primary-500/50 text-primary-300 text-xs font-medium">
+
+              <!-- Label Type Text di pojok bawah jika menggunakan gambar full -->
+              <span v-if="project.icon.includes('.')" class="absolute bottom-3 left-3 z-10 px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm text-white/80 text-[10px] font-mono tracking-wider uppercase">
+                {{ project.type }}
+              </span>
+
+              <!-- Featured badge (Tetap di pojok kanan atas) -->
+              <div v-if="project.featured" class="absolute top-3 right-3 z-10 px-2 py-1 rounded-full bg-primary-500/30 border border-primary-500/50 text-primary-300 text-xs font-medium backdrop-blur-sm">
                 ✦ Featured
               </div>
             </div>
@@ -121,52 +136,40 @@
 <script setup>
 const projects = [
   {
-    title: 'Sistem Data Beasiswa Laravel Filament',
+    title: 'Sistem Booking Servis Anugrah Manual Tech',
     type: 'Web Application',
-    icon: '🎓',
+    icon: '/bengkel.png',
     featured: true,
-    gradient: 'linear-gradient(135deg, rgba(99,102,241,0.3) 0%, rgba(139,92,246,0.3) 100%)',
+    gradient: 'linear-gradient(135deg, rgba(239,68,68,0.3) 0%, rgba(249,115,22,0.3) 100%)', // Warna gradasi merah-oranye khas bengkel/otomotif
     description:
-      'Sistem manajemen data beasiswa berbasis web menggunakan Laravel dan Filament Admin Panel. Dilengkapi fitur CRUD data penerima beasiswa, laporan, dan dashboard statistik.',
-    tech: ['Laravel', 'Filament', 'PHP', 'MySQL', 'Tailwind CSS'],
-    github: 'https://github.com/fahzriahmad',
-    demo: null,
+      'Sistem layanan booking online berbasis web untuk Bengkel Anugrah Manual Tech guna mengatasi antrean fisik. Dilengkapi sistem manajemen antrean real-time, dashboard admin, serta sistem penjadwalan mekanik.',
+    tech: ['Laravel', 'PHP', 'MySQL', 'Tailwind CSS',], // Sesuaikan dengan stack yang Anda pakai
+    github: 'https://github.com/fahzriahmad/Bengkel_amtech', // Sesuaikan dengan link repo Anda jika berbeda
+    demo: 'https://bengkelamtech.up.railway.app',
   },
   {
-    title: 'Analisis Sentimen Twitter',
-    type: 'Data Science / NLP',
-    icon: '🐦',
+    title: 'Sistem Catatan Keuangan',
+    type: 'Web Application',
+    icon: '/catatan-keuangan.png',
     featured: true,
     gradient: 'linear-gradient(135deg, rgba(6,182,212,0.3) 0%, rgba(99,102,241,0.3) 100%)',
     description:
-      'Sistem analisis sentimen terhadap tweet menggunakan metode machine learning. Mengklasifikasikan sentimen positif, negatif, dan netral dari data Twitter secara otomatis.',
-    tech: ['Python', 'Machine Learning', 'NLP', 'Twitter API', 'Pandas'],
-    github: 'https://github.com/fahzriahmad',
-    demo: null,
+      'Aplikasi manajemen finansial berbasis web yang mengimplementasikan fitur autentikasi aman dengan Laravel Sanctum, integrasi API, dan manajemen database relasional. Menggunakan Tailwind CSS untuk menciptakan antarmuka yang bersih dan user-friendly, serta mendukung efisiensi pelacakan transaksi harian pengguna.',
+    tech: ['Laravel', 'Vue.js', 'PostgreSQL', 'Tailwind CSS','Git'],
+    github: 'https://github.com/Reavar14/catatan-keuangan',
+    demo: 'https://production-catatan-keuangan.up.railway.app/login',
   },
   {
-    title: 'Sistem Rekam Medis Klinik',
-    type: 'Healthcare System',
-    icon: '🏥',
+    title: 'BBSP KEBTKE Website',
+    type: 'Internship Project',
+    icon: '/bbsp.png',
     featured: false,
     gradient: 'linear-gradient(135deg, rgba(236,72,153,0.3) 0%, rgba(139,92,246,0.3) 100%)',
     description:
-      'Aplikasi manajemen rekam medis klinik berbasis web. Mengelola data pasien, riwayat kunjungan, diagnosa, dan resep obat dengan antarmuka yang intuitif.',
-    tech: ['Laravel', 'Vue.js', 'MySQL', 'PHP', 'Bootstrap'],
-    github: 'https://github.com/fahzriahmad',
-    demo: null,
-  },
-  {
-    title: 'IoT Monitoring Tandon Air',
-    type: 'IoT System',
-    icon: '💧',
-    featured: false,
-    gradient: 'linear-gradient(135deg, rgba(6,182,212,0.3) 0%, rgba(16,185,129,0.3) 100%)',
-    description:
-      'Sistem monitoring level air pada tandon berbasis IoT menggunakan sensor ultrasonik dan ESP32. Data real-time ditampilkan melalui dashboard web dan notifikasi otomatis.',
-    tech: ['ESP32', 'Firebase', 'Vue.js', 'IoT', 'Arduino C'],
-    github: 'https://github.com/fahzriahmad',
-    demo: null,
+      'Proyek redesign antarmuka website resmi BBSP KEBTKE untuk meningkatkan pengalaman pengguna dan aksesibilitas informasi. Bertanggung jawab penuh dalam mengimplementasikan desain modern dan responsif menggunakan HTML, CSS, dan JavaScript, serta melakukan optimasi performa agar website berjalan optimal di berbagai perangkat dan peramban.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Responsive Design', 'Bootstrap'],
+    github: 'https://github.com/Reavar14/Final_project',
+    demo: 'https://bbspkebtke.vercel.app/',
   },
 ]
 </script>

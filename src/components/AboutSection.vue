@@ -53,16 +53,16 @@
           <div class="glass-card-hover p-6">
             <div class="flex items-start gap-4">
               <div class="w-12 h-12 rounded-xl bg-accent-cyan/20 flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                <svg class="w-6 h-6 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
                 </svg>
               </div>
               <div>
-                <h3 class="font-semibold text-white mb-1">Education</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                  <span class="text-white font-semibold">S1 Teknik Informatika</span><br/>
-                  Universitas Esa Unggul<br/>
-                  IPK: <span class="text-primary-400 font-bold">3.77 / 4.00</span>
+                <h3 class="font-semibold text-white mb-1">Based in</h3>
+                <p class="text-gray-400 text-sm leading-relaxed flex flex-col gap-1">
+                  <span class="text-white font-semibold">Jakarta, Indonesia</span>
+                  <span class="text-primary-400 font-bold">Open for Remote / On-site</span>
                 </p>
               </div>
             </div>
@@ -126,10 +126,13 @@ const focusAreas = [
   'Web Development',
   'Frontend Dev',
   'Backend Dev',
-  'Data Processing',
-  'Sentiment Analysis',
-  'IoT Systems',
+  'Vue.js',
+  'Tailwind CSS',
   'UI/UX',
+  'Laravel',  
+  'PHP',
+  'MySQL',
   'REST API',
+  'Git / GitHub',
 ]
 </script>

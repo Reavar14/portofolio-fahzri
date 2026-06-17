@@ -79,10 +79,18 @@
             >
               <!-- Icon -->
               <div
-                class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl"
+                class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden"
+                :class="cert.icon.startsWith('/') ? 'bg-white/5 p-2' : 'text-2xl'"
                 :style="`background: ${cert.color}20; border: 1px solid ${cert.color}30`"
-              >
-                {{ cert.icon }}
+              >  
+
+                <img 
+                  v-if="cert.icon.startsWith('/')" 
+                  :src="cert.icon" 
+                  :alt="cert.issuer" 
+                  class="w-full h-full object-contain"
+                />
+                <span v-else>{{ cert.icon }}</span>
               </div>
               <div class="flex-1 min-w-0">
                 <h4 class="font-semibold text-white text-sm mb-0.5 truncate">{{ cert.title }}</h4>
@@ -100,18 +108,6 @@
           </div>
 
           <!-- Education Card -->
-          <div class="mt-6 glass-card p-5 border-primary-500/20">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center flex-shrink-0 text-2xl">
-                🎓
-              </div>
-              <div>
-                <h4 class="font-bold text-white">S1 Teknik Informatika</h4>
-                <p class="text-primary-400 text-sm font-medium">Universitas Esa Unggul</p>
-                <p class="text-gray-500 text-xs mt-1">IPK: <span class="text-primary-400 font-bold">3.77 / 4.00</span></p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -121,47 +117,64 @@
 <script setup>
 const experiences = [
   {
-    role: 'Junior Frontend Developer',
-    company: 'Tech Company',
-    period: '2023 – Present',
+    role: 'Fiber Optic Field Technician',
+    company: 'PT Telkom Indonesia (IndiHome) — Mitra',
+    period: 'Dec 2020 – Jul 2021',
     description:
-      'Mengembangkan antarmuka web modern menggunakan Vue.js dan Tailwind CSS. Berkolaborasi dengan tim backend untuk integrasi REST API. Melakukan code review dan optimasi performa aplikasi.',
-    tech: ['Vue.js', 'Tailwind CSS', 'JavaScript', 'REST API', 'Git'],
+      'Bertanggung jawab dalam instalasi jaringan internet serat optik (FTTH), termasuk penarikan kabel, penyambungan (splicing), serta konfigurasi perangkat user. Melakukan troubleshooting gangguan jaringan seperti koneksi lambat atau terputus, mengoptimalkan kualitas jaringan untuk stabilitas layanan, serta mengonfigurasi pengaturan dasar jaringan seperti SSID, keamanan password, dan konektivitas perangkat.',
+    tech: ['Network Troubleshooting', 'Technical Support', 'FTTH', 'Network Configuration'],
+  },
+  
+  {
+    role: 'Junior Frontend Developer',
+    company: 'Balai Besar Survei dan Pengujian Ketenagalistrikan, Energi Baru, Terbarukan dan Konservasi Energi',
+    period: 'Mar 2024 – Jul 2024',
+    description:
+      'Berkolaborasi dalam tim untuk memastikan implementasi desain memenuhi kebutuhan pengguna. Merancang ulang (redesign) website instansi dengan pendekatan modern dan responsif untuk meningkatkan usability, serta mengembangkan antarmuka menggunakan HTML, CSS, dan JavaScript dengan fokus pada optimasi performa dan memastikan kompatibilitas lintas peramban (cross-browser).',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Responsive Design', 'Cross-Browser'],
   },
 ]
 
 const certifications = [
   {
-    title: 'Full-Stack Web Development',
+    title: 'Intro to Data Analytics',
     issuer: 'RevoU',
-    date: '2023',
-    icon: '🚀',
+    date: '2026',
+    icon: '/RevoU.png',
     color: '#6366f1',
-    description: 'Menguasai konsep full-stack development mulai dari frontend hingga backend deployment.',
+    description: 'Berhasil menyelesaikan mini-course Intro to Data Analytics dari RevoU. Melalui program ini, saya mempelajari konsep fundamental mengenai analisis data (data analysis), teknik visualisasi data (data visualization), serta pendekatan berbasis data (data-driven) untuk memecahkan masalah bisnis secara efektif.',
   },
   {
-    title: 'Belajar Membuat Aplikasi Back-End',
-    issuer: 'Dicoding Indonesia',
-    date: '2023',
-    icon: '💻',
+    title: 'Intro to Software Engineering',
+    issuer: 'RevoU',
+    date: '2026',
+    icon: '/RevoU.png',
+    color: '#6366f1',
+    description: 'Berhasil menyelesaikan kursus intensif Intro to Software Engineering dari RevoU. Mempelajari prinsip dan metodologi dasar rekayasa perangkat lunak (Software Engineering Practices), dasar-dasar ilmu komputer, serta pendekatan sistematis dalam merancang dan mengembangkan aplikasi yang efisien.',
+  },
+  {
+    title: 'Memulai Pemrograman dengan Java',
+    issuer: 'Dicoding',
+    date: '2026',
+    icon: '/Dicoding.avif',
+    color: '#6366f1',
+    description: 'Membuktikan pemahaman mendalam mengenai fondasi pemrograman terstruktur dan paradigma Pemrograman Berorientasi Objek (OOP) menggunakan Java. Kompetensi mencakup penguasaan struktur data, kontrol alur (control flow), struktur manajemen memori, serta metodologi pemecahan masalah (problem-solving) secara efisien.',
+  },
+  {
+    title: 'Tingkatkan Produktivitas dengan Microsoft Excel',
+    issuer: 'Skill Academy',
+    date: '2021',
+    icon: '/SkillAcademy.jpg',
     color: '#06b6d4',
-    description: 'Sertifikasi pengembangan backend dengan Node.js dan pembuatan RESTful API.',
+    description: 'Membuktikan kompetensi tingkat lanjut dalam pengolahan, analisis, dan pemodelan data menggunakan Microsoft Excel. Program ini berfokus pada penguasaan rumus kompleks, fungsi analisis data makro, serta optimalisasi alur kerja otomatis guna mendukung efisiensi operasional dan pengambilan keputusan berbasis data di lingkungan profesional.',
   },
   {
-    title: 'Belajar Dasar-Dasar AI',
-    issuer: 'Dicoding Indonesia',
-    date: '2023',
-    icon: '🤖',
+    title: 'Membuat Konten Pemasaran Media Sosial Menggunakan HP untuk Pedagang Melalui Internet (Online Shop)',
+    issuer: 'Skill Academy',
+    date: '2021',
+    icon: '/SkillAcademy.jpg',
     color: '#8b5cf6',
-    description: 'Pemahaman konsep dasar Artificial Intelligence dan Machine Learning.',
-  },
-  {
-    title: 'Program Bangkit Academy',
-    issuer: 'Kampus Merdeka',
-    date: '2023',
-    icon: '🎯',
-    color: '#10b981',
-    description: 'Program akselerasi talenta digital Indonesia oleh Google, GoTo, dan Traveloka.',
+    description: 'Berhasil lulus dengan predikat sangat memuaskan (Skor: 95) dalam merancang strategi pemasaran digital dan produksi konten kreatif berbasis seluler. Kompetensi mencakup analisis riset pasar, perancangan arsitektur strategi konten, serta teknik optimasi media sosial guna mendongkrak visibilitas merek dan pertumbuhan bisnis online.',
   },
 ]
 </script>

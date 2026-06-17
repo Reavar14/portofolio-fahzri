@@ -9,13 +9,13 @@
             F
           </div>
           <span class="font-bold text-white text-sm">
-            Fahzri Ahmad<span class="text-primary-400">.</span>
+            Faizul Ahmad Fahzri<span class="text-primary-400">.</span>
           </span>
         </div>
 
         <!-- Copyright -->
         <p class="text-gray-500 text-sm text-center">
-          © {{ new Date().getFullYear() }} Fahzri Ahmad. Built with
+          © {{ new Date().getFullYear() }} Faizul Ahmad Fahzri. Built with
           <span class="text-primary-400 font-medium">Vue 3</span> +
           <span class="text-accent-cyan font-medium">Tailwind CSS</span>
         </p>
@@ -23,7 +23,7 @@
         <!-- Social Links -->
         <div class="flex items-center gap-3">
           <a
-            href="https://github.com/fahzriahmad"
+            href="https://github.com/Reavar14"
             target="_blank"
             rel="noopener noreferrer"
             class="w-8 h-8 rounded-lg glass-card flex items-center justify-center text-gray-500 hover:text-white transition-all duration-200 hover:scale-110"
@@ -34,7 +34,7 @@
             </svg>
           </a>
           <a
-            href="https://linkedin.com/in/fahzriahmad"
+            href="https://www.linkedin.com/in/faizul-ahmad-fahzri"
             target="_blank"
             rel="noopener noreferrer"
             class="w-8 h-8 rounded-lg glass-card flex items-center justify-center text-gray-500 hover:text-blue-400 transition-all duration-200 hover:scale-110"
@@ -45,7 +45,7 @@
             </svg>
           </a>
           <a
-            href="mailto:fahzriahmad@email.com"
+            href="mailto:faizulahmad09@email.com"
             class="w-8 h-8 rounded-lg glass-card flex items-center justify-center text-gray-500 hover:text-primary-400 transition-all duration-200 hover:scale-110"
             aria-label="Email"
           >

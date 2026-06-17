@@ -95,7 +95,6 @@ const skillCategories = [
       { name: 'Git',       icon: '🌿', bg: 'rgba(240,80,51,0.15)',  level: 82 },
       { name: 'GitHub',    icon: '🐙', bg: 'rgba(255,255,255,0.08)', level: 80 },
       { name: 'VS Code',   icon: '💙', bg: 'rgba(0,122,204,0.15)',  level: 88 },
-      { name: 'Postman',   icon: '📮', bg: 'rgba(255,108,55,0.15)', level: 72 },
       { name: 'Figma',     icon: '🎭', bg: 'rgba(162,89,255,0.15)', level: 65 },
     ]
   },
