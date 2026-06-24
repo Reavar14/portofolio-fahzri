@@ -41,7 +41,7 @@
           </a>
 
           <a
-            href="/CV-Faizul-Ahmad.pdf"
+            href="/CV Faizul-Ahmad-Fahzri.pdf"
             target="_blank" 
             rel="noopener noreferrer"
             class="btn-primary text-sm px-4 py-2 flex items-center gap-2"
@@ -95,7 +95,7 @@
             {{ item.label }}
           </a>
           <a
-            href="/CV-Faizul-Ahmad.pdf"
+            href="/CV Faizul-Ahmad-Fahzri.pdf"
             download
             class="btn-primary text-center mt-2"
             @click="menuOpen = false"
